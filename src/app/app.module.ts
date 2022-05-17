@@ -13,6 +13,8 @@ import { DropdownDirective } from './dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeStartComponent } from './recipe/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipeService } from './recipe/recipe.service';
 
 
 @NgModule({ //ngModule ist nur dafür da, um Angular im Hintergrund mitzuteilen, welche generellen Bestandteile genutzt werden
@@ -32,8 +34,10 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent] //von all diesen Bestandteilen, welche ich eigentlich die root Component (index.html)
 })
 export class AppModule { }
